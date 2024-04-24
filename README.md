@@ -18,7 +18,9 @@ Run these commands:
 ## Complete Step-by-Step Jenkins CICD with GitHub Integration:
 
 
-## Project link: https://medium.com/@mudasirhaji/complete-step-by-step-jenkins-cicd-with-github-integration-aae3961b6e33
+## Project link: 
+
+https://medium.com/@mudasirhaji/complete-step-by-step-jenkins-cicd-with-github-integration-aae3961b6e33
 
 ## Prerequties: AWS ec2 instance,Docker,Github,Jenkins
 
