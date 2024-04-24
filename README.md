@@ -22,10 +22,10 @@ Run these commands:
 
 ## Prerequties: AWS ec2 instance,Docker,Github,Jenkins
 
-1)create personal access token
-2)Jenkins and github integration
-3)CI/CD Pipeline
-4)create ubuntu 20.04 ec2 instance with the name (Jenkins-master)/t2.micro/sg-SSH/HTTP/HTTPS/Custom TCP:8080/custom TCP:8000-anywhere/8gb storage.
+* create personal access token
+* Jenkins and github integration
+* CI/CD Pipeline
+* create ubuntu 20.04 ec2 instance with the name (Jenkins-master)/t2.micro/sg-SSH/HTTP/HTTPS/Custom TCP:8080/custom TCP:8000-anywhere/8gb storage.
 
 ## create personal access token:
 
@@ -44,11 +44,17 @@ $ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
     /etc/apt/sources.list.d/jenkins.list > /dev/null
 
 $ sudo apt-get update
+
 $ sudo apt-get install fontconfig openjdk-11-jre -y
+
 $ java -version
+
 $ sudo apt-get install jenkins -y
+
 $ sudo systemctl enable jenkins
+
 $ sudo systemctl start jenkins
+
 $ sudo systemctl status jenkins
 
 @ go to browser and paste public ip with 8080 port
@@ -57,21 +63,35 @@ $ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ## Install docker:
 
 $ sudo apt update
+
 $ sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
+
 $ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
 $ echo "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
 $ sudo apt update
+
 $ sudo apt install docker-ce -y
+
 $ sudo systemctl start docker
+
 $ sudo systemctl enable docker
+
 $ docker --version
+
 $ sudo usermod -aG docker $USER
 
 ## Create Public and Private key:
+
 $ ssh-keygen     - enter - enter -enter - created private key
+
 $ cd .ssh
+
 $ cat id_rsa   (private key)
+
 $ cat id_rsa.pub  (public key) if its not working
+
 $ cat /root/.ssh/id_rsa.pub  (public key)
 
 now go to github account in settings - SSH and GPG key - New SSH key - Title -Jenkins-project- paste public key in blank field -Add SSH key - enter authentication token which is received on mobile and verify (now a days not received auth token on mobile )
@@ -84,13 +104,19 @@ now build the project.. you will get the successed output
 check on terminal using below cmd you will see jenkins has been integrated with github
 
 $ cd /var/lib/jenkins/workspace/todo-node-app
+
 $ sudo apt install nodejs -y
+
 $ sudo apt install npm -y     (node package manager)
+
 $ sudo npm install    
 
 $ sudo npm audit fix     (if error occurs use this cmd to fix the issue)
+
 $ sudo npm audit fix --force (to address all isssue)
+
 $ sudo npm audit     (for details) 
+
 $ node app.js        (you will see the app is running on 8000)
 
 -go to browser and paste public IP with 8000 port, you will get the output
@@ -108,14 +134,19 @@ EXPOSE 8000
 CMD ["node", "app.js"]
 
 $ sudo chmod 777 /var/run/docker.sock    -give the permission to docker.sock
+
 $ docker build . -t todo-node-app1    (build the image)
+
 $ docker images
+
 $ docker run -d --name node-todo-new -p 8000:8000 todo-node-app1    (build the container from the same Image)
+
 $ docker ps
 
 when we add build steps you will get error for permission:use below cmd for resolve error
 
 $ sudo chmod 777 /var/lib/jenkins/workspace/todo-node-app
+
 $ sudo usermod -a -G docker jenkins
 
 Step 7: Configure Web-hook:
