@@ -15,25 +15,25 @@ Run these commands:
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
-1)Complete Step-by-Step Jenkins CICD with GitHub Integration:
+## Complete Step-by-Step Jenkins CICD with GitHub Integration:
 
 
-https://medium.com/@mudasirhaji/complete-step-by-step-jenkins-cicd-with-github-integration-aae3961b6e33
+## Project link: https://medium.com/@mudasirhaji/complete-step-by-step-jenkins-cicd-with-github-integration-aae3961b6e33
 
-Prerequties: AWS ec2 instance,Docker,Github,Jenkins
+## Prerequties: AWS ec2 instance,Docker,Github,Jenkins
 
 1)create personal access token
 2)Jenkins and github integration
 3)CI/CD Pipeline
 4)create ubuntu 20.04 ec2 instance with the name (Jenkins-master)/t2.micro/sg-SSH/HTTP/HTTPS/Custom TCP:8080/custom TCP:8000-anywhere/8gb storage.
 
-1)create personal access token:
+## create personal access token:
 
 -go to the github settings - devloper setting - personal access token - Tokens(classic) - click on generate new token
   
 New token : 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  
 
-First install Jenkins:
+## Install Jenkins:
 
 -sudo apt-get update
 -curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
@@ -53,7 +53,7 @@ First install Jenkins:
 -go to browser and paste public ip with 8080 port
 -sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
-second install docker:
+## Install docker:
 
 -sudo apt update
 -sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
@@ -66,6 +66,7 @@ second install docker:
 -docker --version
 -sudo usermod -aG docker $USER
 
+## Create Public and Private key:
 -ssh-keygen     - enter - enter -enter - created private key
 -cd .ssh
 -cat id_rsa   (private key)
