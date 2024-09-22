@@ -98,9 +98,9 @@ Run these commands:
 
      cat /root/.ssh/id_rsa.pub  (public key)
 
-## now go to github account in settings - SSH and GPG key - New SSH key - Title -Jenkins-project- paste public key in blank field -Add SSH key - enter authentication token which is received on mobile and verify (now a days not received auth token on mobile )
+# now go to github account in settings - SSH and GPG key - New SSH key - Title -Jenkins-project- paste public key in blank field -Add SSH key - enter authentication token which is received on mobile and verify (now a days not received auth token on mobile )
 
-## go to Jenkins dashboard -new item - name (todo-node-app) -freestyle project -Genral - descripstion-this is node js todo app - select SCM -git -paste url of git repo - Add credentials - Domain - default - Kind - SSH username with private key - Id -github-jenkins- description - this is for jenkins and github intigration - username - paste instance username(ubuntu)- private key - click enter directly - paste private key - Add - select again credentials option - branch to build - */main -repository browser(auto) - apply and save
+# go to Jenkins dashboard -new item - name (todo-node-app) -freestyle project -Genral - descripstion-this is node js todo app - select SCM -git -paste url of git repo - Add credentials - Domain - default - Kind - SSH username with private key - Id -github-jenkins- description - this is for jenkins and github intigration - username - paste instance username(ubuntu)- private key - click enter directly - paste private key - Add - select again credentials option - branch to build - */main -repository browser(auto) - apply and save
 
 now build the project.. you will get the successed output
 
@@ -122,8 +122,7 @@ check on terminal using below cmd you will see jenkins has been integrated with 
 
      node app.js        (you will see the app is running on 8000)
 
--go to browser and paste public IP with 8000 port, you will get the output
-
+go to browser and paste public IP with 8000 port, you will get the output
 
 Now we are going to deploy our app using docker container for that we need to install docker first which is we have already installed;
 
