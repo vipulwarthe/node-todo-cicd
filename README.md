@@ -194,3 +194,7 @@
 * Now change the code in GitHub a bit to see if the integration works.
 
 * you will see job will run automatically.
+
+* you can restart the container to run the node-todo application
+
+        docker start <container ID>
