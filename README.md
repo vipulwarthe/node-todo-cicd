@@ -136,16 +136,17 @@
     EXPOSE 8000
     CMD ["node", "app.js"]
 
+* give the permission to docker.sock
 
-     sudo chmod 777 /var/run/docker.sock    -give the permission to docker.sock
+      sudo chmod 777 /var/run/docker.sock   
 
-     docker build . -t todo-node-app1    (build the image)
+      docker build . -t todo-node-app1    (build the image)
 
-     docker images
+      docker images
 
-     docker run -d --name node-todo-new -p 8000:8000 todo-node-app1    (build the container from the same Image)
+      docker run -d --name node-todo-new -p 8000:8000 todo-node-app1    (build the container from the same Image)
 
-     docker ps
+      docker ps
 
 * when we add build steps you will get error for permission:use below cmd for resolve error
 
