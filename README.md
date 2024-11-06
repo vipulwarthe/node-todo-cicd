@@ -126,14 +126,16 @@
 
 * Now we are going to deploy our app using docker container for that we need to install docker first which is we have already installed;
 
-## create one Dockerfile under same path - cd /var/lib/jenkins/workspace/todo-node-app
+# create one Dockerfile under same path - cd /var/lib/jenkins/workspace/todo-node-app
 
-FROM node:12.2.0-alpine
-WORKDIR app
-COPY . .
-RUN npm install
-EXPOSE 8000
-CMD ["node", "app.js"]
+
+    FROM node:12.2.0-alpine
+    WORKDIR app
+    COPY . .
+    RUN npm install
+    EXPOSE 8000
+    CMD ["node", "app.js"]
+
 
      sudo chmod 777 /var/run/docker.sock    -give the permission to docker.sock
 
