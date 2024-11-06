@@ -125,6 +125,8 @@
 
       cd /var/lib/jenkins/workspace/todo-node-app
 
+      ls
+  
       sudo apt install nodejs -y
 
       sudo apt install npm -y     (node package manager)
