@@ -44,7 +44,13 @@
 ## Install Jenkins:
 
      sudo apt-get update
-    
+
+      java
+
+      sudo apt install openjdk-17-jre-headless -y
+
+      java -version
+      
      curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
     /usr/share/keyrings/jenkins-keyring.asc > /dev/null
 
@@ -54,17 +60,15 @@
 
      sudo apt-get update
 
-     sudo apt-get install fontconfig openjdk-11-jre -y
-
-     java -version
-
      sudo apt-get install jenkins -y
-
-     sudo systemctl enable jenkins
 
      sudo systemctl start jenkins
 
+     sudo systemctl enable jenkins
+     
      sudo systemctl status jenkins
+
+     sudo ufw allow 8080           (optional: If you have firewall enabled, allow traffic on port 8080)
 
 @ go to browser and paste public ip with 8080 port
 
@@ -82,15 +86,22 @@
 
      sudo apt update
 
-     sudo apt install docker-ce -y
+     sudo apt install docker.io -y
+
+     sudo usermod -aG docker $USER
+
+     sudo chown $USER /var/run/docker.sock
+
+     newgrp docker 
 
      sudo systemctl start docker
 
      sudo systemctl enable docker
 
+     sudo systemctl status docker
+
      docker --version
 
-     sudo usermod -aG docker $USER
 
 ## Create Public and Private key:
 
