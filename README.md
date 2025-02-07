@@ -1,4 +1,4 @@
-# node-todo-cicd Project:
+# node-todo-cicd Project
 
 * Run these commands:
 
