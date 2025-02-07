@@ -1,4 +1,4 @@
-# node-todo-cicd 
+# node-todo-cicd Project:
 
 * Run these commands:
 
@@ -15,7 +15,7 @@
 
 ---------------------------------------------------------------------------------------------------------------------------------------
 
-## Complete Step-by-Step Jenkins CICD with GitHub Integration:
+## Complete Step-by-Step Jenkins CICD with GitHub Integration Project with nodejs:
 
 
 ## Project link: 
@@ -43,32 +43,38 @@
 
 ## Install Jenkins:
 
-     sudo apt-get update
+    sudo apt-get update
 
-      java
+    java
 
-      sudo apt install openjdk-17-jre-headless -y
-
-      java -version
+    sudo vi jenkins.sh      # add below commands for installtion of jenkins
       
-     curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+    sudo apt install openjdk-17-jre-headless -y
+      
+    curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
     /usr/share/keyrings/jenkins-keyring.asc > /dev/null
 
-    $ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+    echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
     https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
     /etc/apt/sources.list.d/jenkins.list > /dev/null
 
-     sudo apt-get update
+    java -version
+    
+    sudo apt-get update
 
-     sudo apt-get install jenkins -y
+    sudo apt-get install jenkins -y
 
-     sudo systemctl start jenkins
+    sudo systemctl start jenkins
 
-     sudo systemctl enable jenkins
+    sudo systemctl enable jenkins
      
-     sudo systemctl status jenkins
+    sudo systemctl status jenkins
 
-     sudo ufw allow 8080           (optional: If you have firewall enabled, allow traffic on port 8080)
+    sudo chmod +x jenkins.sh
+
+    ./jenkins.sh
+
+    sudo ufw allow 8080           (optional: If you have firewall enabled, allow traffic on port 8080)
 
 @ go to browser and paste public ip with 8080 port
 
@@ -76,6 +82,8 @@
 
 ## Install docker:
 
+     sudo vi docker.sh     #create one file and add below commands
+     
      sudo apt update
 
      sudo apt install apt-transport-https ca-certificates curl software-properties-common -y
@@ -102,6 +110,9 @@
 
      docker --version
 
+     sudo chmod +x docker.sh        # give the executable permisstion to docker file
+
+     ./docker.sh                    # run the file
 
 ## Create Public and Private key:
 
@@ -109,6 +120,8 @@
 
      cd .ssh
 
+     ls
+     
      cat id_rsa   (private key)
 
      cat id_rsa.pub  (public key) if its not working
@@ -145,7 +158,7 @@
 
 * Now we are going to deploy our app using docker container for that we need to install docker first which is we have already installed;
 
-# create one Dockerfile under same path - cd /var/lib/jenkins/workspace/todo-node-app
+## create one Dockerfile under same path - cd /var/lib/jenkins/workspace/todo-node-app
 
 
     FROM node:12.2.0-alpine
@@ -159,7 +172,7 @@
 
       sudo chmod 777 /var/run/docker.sock   
 
-      docker build . -t todo-node-app1    (build the image)
+      docker build -t todo-node-app1 .   (build the image)
 
       docker images
 
