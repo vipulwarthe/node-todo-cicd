@@ -72,9 +72,11 @@
 
     sudo chmod +x jenkins.sh
 
-    ./jenkins.sh
+* Run below command to execute and install Jenkins 
 
-    sudo ufw allow 8080           (optional: If you have firewall enabled, allow traffic on port 8080)
+      ./jenkins.sh
+
+      sudo ufw allow 8080           (optional: If you have firewall enabled, allow traffic on port 8080)
 
 @ go to browser and paste public ip with 8080 port
 
@@ -110,9 +112,11 @@
 
      docker --version
 
-     sudo chmod +x docker.sh        # give the executable permisstion to docker file
+* Run below command to execute and install docker 
 
-     ./docker.sh                    # run the file
+      sudo chmod +x docker.sh        # give the executable permisstion to docker file
+
+      ./docker.sh                    # run the file
 
 ## Create Public and Private key:
 
